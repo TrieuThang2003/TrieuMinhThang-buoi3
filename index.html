@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Sản Phẩm</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🛍️ Dashboard Sản Phẩm</h1>
+  </header>
+
+  <div class="container">
+    <!-- Controls Section -->
+    <div class="controls">
+      <!-- Search -->
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Tìm kiếm theo tiêu đề sản phẩm..."
+        />
+      </div>
+
+      <!-- Items Per Page -->
+      <div class="items-control">
+        <label for="itemsPerPage">Hiển thị:</label>
+        <select id="itemsPerPage">
+          <option value="5">5 / trang</option>
+          <option value="10" selected>10 / trang</option>
+          <option value="20">20 / trang</option>
+        </select>
+      </div>
+
+      <!-- Sort Buttons -->
+      <div class="sort-buttons">
+        <button class="sort-btn" data-sort="title" data-order="asc">📝 Sắp xếp tên ↑</button>
+        <button class="sort-btn" data-sort="title" data-order="desc">📝 Sắp xếp tên ↓</button>
+        <button class="sort-btn" data-sort="price" data-order="asc">💰 Sắp xếp giá ↑</button>
+        <button class="sort-btn" data-sort="price" data-order="desc">💰 Sắp xếp giá ↓</button>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Ảnh</th>
+          <th>Tiêu Đề</th>
+          <th>Giá</th>
+          <th>Danh Mục</th>
+          <th>Mô Tả</th>
+        </tr>
+      </thead>
+      <tbody id="productBody">
+        <!-- Dữ liệu sẽ được load từ API -->
+      </tbody>
+    </table>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button id="prevBtn" class="btn-page">← Trước</button>
+      <span id="pageInfo">Trang 1 / 1</span>
+      <button id="nextBtn" class="btn-page">Tiếp →</button>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="js/utils.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
